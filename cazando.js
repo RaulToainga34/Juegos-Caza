@@ -12,19 +12,20 @@ let comidaX = 450;
 let comidaY = 450;
 
 function graficarGato(){
-    ctx.fillStyle = "#FF0000";
-    ctx.fillRect(250,250,50,50);
-
+    graficarRectangulo(gatoX,gatoY,ancho_Gato,ancho_Gato,"#800000");
 }
 
 function graficarComida(){
-    ctx.fillStyle = "#000080";
-    ctx.fillRect(450,450,40,40);
-
+    graficarRectangulo(comidaX,comidaY,ancho_Comida,ancho_Comida,"#E8C00C");
 }
 
 function iniciarJuego(){
     graficarComida();
     graficarGato();
+}
+
+function graficarRectangulo(x,y,ancho,alto,color){
+    ctx.fillStyle = color;
+    ctx.fillRect(x,y,ancho,alto);
 }
 
