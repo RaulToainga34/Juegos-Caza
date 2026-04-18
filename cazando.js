@@ -11,6 +11,8 @@ const ancho_Comida = 40;
 let comidaX = 450;
 let comidaY = 450;
 
+let puntaje = 0;
+
 function actualizarPantalla(){
     limpiarCanva();
     graficarComida();
@@ -28,6 +30,7 @@ function graficarComida(){
 function iniciarJuego(){
     graficarComida();
     graficarGato();
+    aparecerComida();
 }
 
 function graficarRectangulo(x,y,ancho,alto,color){
@@ -68,6 +71,14 @@ function detectarColision(){
         comidaX < gatoX+ancho_Gato && 
         comidaY+alto_Comida > gatoY && 
         comidaY < gatoY+alto_Gato){
-            alert("COMIDO")
+            aparecerComida();
+            puntaje = puntaje+1;
+            mostrarEnSpan("txtxpuntos",puntaje)
     }
+}
+
+function aparecerComida(){
+    comidaX = generarAleatorio(0,canvas.width-ancho_Comida);
+    comidaY = generarAleatorio(0,canvas.height-ancho_Comida);
+    actualizarPantalla();
 }
