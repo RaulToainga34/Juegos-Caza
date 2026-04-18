@@ -42,19 +42,32 @@ function limpiarCanva(){
 function moverIzquierda(){
     gatoX = gatoX-10;
     actualizarPantalla();
+    detectarColision();
 }
 
 function moverDerecha(){
     gatoX = gatoX+10;
     actualizarPantalla();
+    detectarColision();
 }
 
 function moverArriba(){
     gatoY = gatoY-10;
     actualizarPantalla();
+    detectarColision();
 }
 
 function moverAbajo(){
     gatoY = gatoY+10;
     actualizarPantalla();
+    detectarColision();
+}
+
+function detectarColision(){
+    if(comidaX+ancho_Comida > gatoX && 
+        comidaX < gatoX+ancho_Gato && 
+        comidaY+alto_Comida > gatoY && 
+        comidaY < gatoY+alto_Gato){
+            alert("COMIDO")
+    }
 }
