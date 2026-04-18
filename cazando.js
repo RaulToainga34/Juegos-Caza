@@ -77,7 +77,7 @@ function detectarColision(){
             aparecerComida();
             puntaje = puntaje+1;
             tiempo = tiempo+2;
-            mostrarEnSpan("txtxpuntos",puntaje)
+            mostrarEnSpan("txtxpuntos",puntaje);
             mostrarEnSpan("txtxtiempo",tiempo);
             if(puntaje == 6){
                 clearInterval(intervalo);
@@ -99,4 +99,15 @@ function restarTiempo(){
         clearInterval(intervalo);
         alert("GAME OVER");
     }
+}
+
+function reiniar(){
+    clearInterval(intervalo);
+    comidaX = 450;
+    gatoY = 250;
+    puntaje = 0;
+    tiempo = 10;
+    mostrarEnSpan("txtxpuntos",puntaje);
+    mostrarEnSpan("txtxtiempo",tiempo);
+    iniciarJuego();
 }
