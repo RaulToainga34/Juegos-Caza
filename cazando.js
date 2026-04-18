@@ -30,7 +30,7 @@ function graficarComida(){
 }
 
 function iniciarJuego(){
-    intervalo = setInterval(restarTiempo,1500);
+    intervalo = setInterval(restarTiempo,1300);
     graficarComida();
     graficarGato();
     aparecerComida();
@@ -76,7 +76,13 @@ function detectarColision(){
         comidaY < gatoY+alto_Gato){
             aparecerComida();
             puntaje = puntaje+1;
+            tiempo = tiempo+2;
             mostrarEnSpan("txtxpuntos",puntaje)
+            mostrarEnSpan("txtxtiempo",tiempo);
+            if(puntaje == 6){
+                clearInterval(intervalo);
+                alert("GANADOR");
+            }
     }
 }
 
@@ -89,4 +95,8 @@ function aparecerComida(){
 function restarTiempo(){
     tiempo = tiempo-1;
     mostrarEnSpan("txtxtiempo",tiempo);
+    if(tiempo == 0){
+        clearInterval(intervalo);
+        alert("GAME OVER");
+    }
 }
