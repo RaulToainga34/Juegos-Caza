@@ -11,6 +11,12 @@ const ancho_Comida = 40;
 let comidaX = 450;
 let comidaY = 450;
 
+function actualizarPantalla(){
+    limpiarCanva();
+    graficarComida();
+    graficarGato();
+}
+
 function graficarGato(){
     graficarRectangulo(gatoX,gatoY,ancho_Gato,ancho_Gato,"#800000");
 }
@@ -38,8 +44,17 @@ function moverIzquierda(){
     actualizarPantalla();
 }
 
-function actualizarPantalla(){
-    limpiarCanva();
-    graficarComida();
-    graficarGato();
+function moverDerecha(){
+    gatoX = gatoX+10;
+    actualizarPantalla();
+}
+
+function moverArriba(){
+    gatoY = gatoY-10;
+    actualizarPantalla();
+}
+
+function moverAbajo(){
+    gatoY = gatoY+10;
+    actualizarPantalla();
 }
