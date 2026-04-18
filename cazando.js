@@ -12,6 +12,8 @@ let comidaX = 450;
 let comidaY = 450;
 
 let puntaje = 0;
+let tiempo = 10;
+let intervalo;
 
 function actualizarPantalla(){
     limpiarCanva();
@@ -28,6 +30,7 @@ function graficarComida(){
 }
 
 function iniciarJuego(){
+    intervalo = setInterval(restarTiempo,1500);
     graficarComida();
     graficarGato();
     aparecerComida();
@@ -81,4 +84,9 @@ function aparecerComida(){
     comidaX = generarAleatorio(0,canvas.width-ancho_Comida);
     comidaY = generarAleatorio(0,canvas.height-ancho_Comida);
     actualizarPantalla();
+}
+
+function restarTiempo(){
+    tiempo = tiempo-1;
+    mostrarEnSpan("txtxtiempo",tiempo);
 }
