@@ -9,39 +9,44 @@
 
 <body onload="iniciarJuego()">
 
-  <div class="container">
+  <div class="overlay">
 
     <header>
-      <h1>⚓ Juego Cazando</h1>
+      <h1>Juego Cazando</h1>
       <p class="autor">Autor: Rabetomo</p>
     </header>
 
-    <section class="game-area">
-      <canvas id="areaJuego" width="500" height="500"></canvas>
-      <div class="niebla"></div>
-    </section>
+    <div class="layout">
 
-    <section class="panel">
-      <div class="card">
-        <span>Puntos</span>
-        <strong id="txtxpuntos">0</strong>
+      <!-- IZQUIERDA -->
+      <div class="side-panel">
+        <h3>PUNTOS</h3>
+        <div id="txtxpuntos">0</div>
       </div>
 
-      <div class="card">
-        <span>Tiempo</span>
-        <strong id="txtxtiempo">10</strong>
-      </div>
-    </section>
+      <!-- CENTRO -->
+      <div class="centro">
+        <canvas id="areaJuego" width="500" height="500"></canvas>
 
-    <section class="controles">
-      <div class="grid-controles">
-        <button onclick="moverArriba()">⬆</button>
-        <button onclick="moverIzquierda()">⬅</button>
-        <button onclick="moverAbajo()">⬇</button>
-        <button onclick="moverDerecha()">➡</button>
+        <div class="controles">
+          <div class="grid-controles">
+            <button onclick="moverArriba()">⬆</button>
+            <button onclick="moverIzquierda()">⬅</button>
+            <button onclick="moverAbajo()">⬇</button>
+            <button onclick="moverDerecha()">➡</button>
+          </div>
+
+          <button class="btn-restart" onclick="reiniar()">🔶 REINICIAR</button>
+        </div>
       </div>
-      <button class="btn-restart" onclick="reiniar()">⛴ Reiniciar</button>
-    </section>
+
+      <!-- DERECHA -->
+      <div class="side-panel">
+        <h3>TIEMPO</h3>
+        <div id="txtxtiempo">10</div>
+      </div>
+
+    </div>
 
     <p id="mensaje"></p>
 
