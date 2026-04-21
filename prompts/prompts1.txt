@@ -1,0 +1,3 @@
+1. actua como diseñador grafico, mejora la parte visual de este juego, modifica el html y el css no cambies los id de los componentes, manten separado el css y el html
+2. has un estilo del juego dredge
+3. mejora los botones
