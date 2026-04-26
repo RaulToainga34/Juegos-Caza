@@ -77,8 +77,9 @@ function detectarColision(){
             aparecerComida();
             puntaje = puntaje+1;
             tiempo = 15;
+            let dificultad = tiempo - 1;
             mostrarEnSpan("txtxpuntos",puntaje);
-            mostrarEnSpan("txtxtiempo",tiempo);
+            mostrarEnSpan("txtxtiempo", dificultad);
             if(puntaje == 6){
                 clearInterval(intervalo);
                 alert("GANADOR");
@@ -89,6 +90,7 @@ function detectarColision(){
 function aparecerComida(){
     comidaX = generarAleatorio(0,canvas.width-ancho_Comida);
     comidaY = generarAleatorio(0,canvas.height-ancho_Comida);
+    tiempo = 15;
     actualizarPantalla();
 }
 
@@ -106,7 +108,7 @@ function reiniar(){
     comidaX = 450;
     gatoY = 250;
     puntaje = 0;
-    tiempo = 10;
+    tiempo = 15;
     mostrarEnSpan("txtxpuntos",puntaje);
     mostrarEnSpan("txtxtiempo",tiempo);
     iniciarJuego();
