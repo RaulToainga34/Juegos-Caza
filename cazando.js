@@ -12,7 +12,7 @@ let comidaX = 450;
 let comidaY = 450;
 
 let puntaje = 0;
-let tiempo = 10;
+let tiempo = 15;
 let intervalo;
 
 function actualizarPantalla(){
